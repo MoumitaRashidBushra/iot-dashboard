@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fish Disease Detection</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font link -->
+
+    <script
+      src="https://kit.fontawesome.com/4ee5f1f089.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- sidebar start -->
+    <div class="drawer lg:drawer-open">
+      <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content flex flex-col">
+        <!-- Page content here start -->
+
+        <!-- navbar start -->
+        <div class="navbar bg-base-100 container px-8 mb-8 mt-8">
+          <div class="flex-1">
+            <a class="btn btn-ghost text-3xl font-semibold"
+              >Fish Disease Detection</a
+            >
+          </div>
+          <div class="flex-none gap-2">
+            <!-- <div class="form-control">
+
+              <input
+                type="text"
+                placeholder="Search"
+                class="input input-bordered w-24 md:w-auto"
+              />
+            </div> -->
+            <i class="fa-solid fa-bell text-2xl"></i>
+            <div class="dropdown dropdown-end">
+              <div
+                tabindex="0"
+                role="button"
+                class="btn btn-ghost btn-circle avatar"
+              >
+                <div class="w-10 rounded-full">
+                  <img
+                    alt="Tailwind CSS Navbar component"
+                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                  />
+                </div>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              >
+                <li>
+                  <a class="justify-between">
+                    Profile
+                    <span class="badge">New</span>
+                  </a>
+                </li>
+                <li><a>Settings</a></li>
+                <li><a>Logout</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- navbar end -->
+
+        <div class="container px-32 mb-10 flex gap-4 items-center">
+          <div>
+            <div class="label">
+              <span class="label-text font-semibold"
+                >Enter your fish picture</span
+              >
+            </div>
+            <input
+              type="file"
+              class="file-input file-input-bordered file-input-border-black w-full"
+            />
+          </div>
+          <div class="mt-9">
+            <button class="btn btn-outline btn-border-black">Submit</button>
+          </div>
+        </div>
+
+        <div class="container px-32 mb-10 flex gap-8 items-center">
+          <div>
+            <img
+              class="w-96 rounded"
+              src="https://img.freepik.com/free-photo/top-view-delicious-seafood-arrangement_23-2148926755.jpg?t=st=1733850505~exp=1733854105~hmac=cc3da60da4651856f2fa521d38132bb7f80b8f231151444506ba0301ab02f636&w=740"
+              alt=""
+            />
+          </div>
+          <div class="w-auto">
+            <div class="card bg-base-100 w-full border border-black rounded-lg">
+              <div class="card-body">
+                <div class="text-2xl font-semibold text-black">
+                  Result Analysis
+                </div>
+                <p>
+                  <span class="font-semibold text-black">Disease:</span>
+                  Positive
+                </p>
+                <p>
+                  <span class="font-semibold text-black">Disease Name:</span>
+                  Columnaris (A bacterial infection)
+                </p>
+                <p>
+                  <span class="font-semibold text-black"
+                    >Disease Classification:</span
+                  >
+                  <br />
+                  1. Gram-negative, <br />2. Rod-shaped, <br />3. Aerobic
+                  (requires oxygen)
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card start -->
+
+        <!-- Card ends -->
+
+        <!-- Page content here end-->
+        <label
+          for="my-drawer-2"
+          class="btn btn-primary drawer-button lg:hidden"
+        >
+          Open drawer
+        </label>
+      </div>
+      <div class="drawer-side">
+        <label
+          for="my-drawer-2"
+          aria-label="close sidebar"
+          class="drawer-overlay"
+        ></label>
+        <ul class="menu bg-base-200 text-base-content min-h-full w-56 p-4">
+          <!-- Sidebar content here -->
+          <li>
+            <a
+              href="index.html"
+              class="mt-8 text-center mb-4 font-semibold"
+              data-page="index.html"
+              >Water Quality Analysis</a
+            >
+          </li>
+          <li>
+            <a
+              href="FishDisease.html"
+              class="text-center mb-4 font-semibold"
+              data-page="FishDisease.html"
+              >Fish Disease Detection</a
+            >
+          </li>
+          <li>
+            <a
+              href="TDSMeasurement.html"
+              class="text-center mb-4 font-semibold"
+              data-page="TDSMeasurement.html"
+              >TDS Measurement</a
+            >
+          </li>
+          <li>
+            <a
+              href="FishFood.html"
+              class="text-center mb-4 font-semibold"
+              data-page="FishFood.html"
+              >Fish Food Measurement</a
+            >
+          </li>
+          <li>
+            <a
+              href="Contact.html"
+              class="text-center mb-4 font-semibold"
+              data-page="Contact.html"
+              >Contact to Admin</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- sidebar end -->
+    <script src="common.js"></script>
+  </body>
+</html>

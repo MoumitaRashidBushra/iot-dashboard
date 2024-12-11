@@ -1,0 +1,220 @@
+<!-- // import { useRef, useState } from "react";
+
+// const InputBox = () => {
+//   const [text, setText] = useState(""); // To store typed text
+//   const [attachments, setAttachments] = useState([]); // To store files
+//   const divRef = useRef(null);
+//   const fileInputRef = useRef(null);
+
+//   const handleInput = (event) => {
+//     setText(event.target.innerText); // Set the text content of the div
+//   };
+
+//   const triggerFileUpload = () => {
+//     fileInputRef.current.click(); // Simulate click to open file input
+//   };
+
+//   const handleFileUpload = (event) => {
+//     const file = event.target.files[0]; // Get the uploaded file
+//     if (file) {
+//       const fileURL = URL.createObjectURL(file); // Create a URL for the file
+
+//       // Add file to the list of attachments
+//       setAttachments((prev) => [
+//         ...prev,
+//         { name: file.name, url: fileURL, id: Date.now() }, // Add unique id
+//       ]);
+//     }
+//   };
+
+//   const handleAttachmentClick = (e, url) => {
+//     e.preventDefault();
+//     window.open(url, "_blank"); // Open the file in a new tab when clicked
+//   };
+
+//   const handleRemoveAttachment = (id) => {
+//     setAttachments((prev) => prev.filter((attachment) => attachment.id !== id));
+//   };
+
+//   return (
+//     <div className="w-full mx-auto px-2 lg:px-24 mt-20 mr-2 lg:mr-40">
+//       <div className="label">
+//         <span className="label-text text-xl font-semibold">Code Analysis</span>
+//       </div>
+
+//       <div className="relative w-full px-2">
+//         {/* Rich Text Area */}
+//         <div
+//           ref={divRef}
+//           contentEditable={true}
+//           onInput={handleInput}
+//           placeholder="Paste your code here..."
+//           className="min-h-[4rem] max-h-[12rem] w-full p-2 border border-gray-300 rounded-md resize-none overflow-y-auto"
+//           style={{ whiteSpace: "pre-wrap", lineHeight: "1.5" }} // Preserve whitespace for formatting
+//         >
+//           {attachments.map((attachment) => (
+//             <div
+//               key={attachment.id}
+//               className="flex items-center space-x-2 bg-gray-200 p-1 rounded-md mb-2"
+//               style={{
+//                 display: "inline-block", // Make the file attachments block-level
+//               }}
+//             >
+//               {/* Display file name as clickable link */}
+//               <a
+//                 href={attachment.url}
+//                 onClick={(e) => handleAttachmentClick(e, attachment.url)}
+//                 className="text-blue-500 underline text-sm"
+//               >
+//                 {attachment.name}
+//               </a>
+
+//               {/* Close Icon to remove file */}
+//               <button
+//                 onClick={() => handleRemoveAttachment(attachment.id)}
+//                 className="text-red-500 hover:text-red-700 text-sm"
+//               >
+//                 <svg
+//                   xmlns="http://www.w3.org/2000/svg"
+//                   fill="none"
+//                   viewBox="0 0 24 24"
+//                   strokeWidth="2"
+//                   stroke="currentColor"
+//                   className="w-4 h-4"
+//                 >
+//                   <path
+//                     strokeLinecap="round"
+//                     strokeLinejoin="round"
+//                     d="M6 18L18 6M6 6l12 12"
+//                   />
+//                 </svg>
+//               </button>
+//             </div>
+//           ))}
+//         </div>
+
+//         {/* Plus Icon for File Upload */}
+//         <label
+//           onClick={triggerFileUpload}
+//           className="absolute -right-20 lg:right-3 bottom-8 cursor-pointer bg-primary text-white p-1 rounded-full shadow-md"
+//         >
+//           <svg
+//             xmlns="http://www.w3.org/2000/svg"
+//             fill="none"
+//             viewBox="0 0 24 24"
+//             strokeWidth="2"
+//             stroke="currentColor"
+//             className="w-4 h-4"
+//           >
+//             <path
+//               strokeLinecap="round"
+//               strokeLinejoin="round"
+//               d="M12 4.5v15m7.5-7.5h-15"
+//             />
+//           </svg>
+//         </label>
+
+//         {/* Hidden File Input */}
+//         <input
+//           ref={fileInputRef}
+//           id="file-upload"
+//           type="file"
+//           className="hidden"
+//           onChange={handleFileUpload}
+//         />
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default InputBox;
+
+import { useRef, useState } from "react";
+
+const InputBox = () => {
+  const [text, setText] = useState("");
+  const textareaRef = useRef(null);
+
+  const handleInput = (event) => {
+    setText(event.target.value);
+
+    // Adjust height dynamically
+    const textarea = textareaRef.current;
+    textarea.style.height = "auto"; // Reset height
+    textarea.style.height = `${textarea.scrollHeight}px`; // Adjust to scroll height
+  };
+
+  //   const handleFileUpload = (event) => {
+  //     const file = event.target.files[0];
+
+  //     if (file) {
+  //       const reader = new FileReader();
+
+  //       reader.onload = (e) => {
+  //         const fileContent = e.target.result;
+
+  //         // Append file name and content to the textarea
+  //         const updatedText = text
+  //           ? `${text}\n[${file.name}]\n${fileContent}`
+  //           : `[${file.name}]\n${fileContent}`;
+  //         setText(updatedText);
+  //       };
+
+  //       // Read file content as a Data URL
+  //       reader.readAsDataURL(file);
+  //     }
+  //   };
+
+  return (
+    <div className="w-full  px-2 lg:px-10 mt-20 mr-2 ">
+      <div className="label">
+        <span className="label-text text-xl font-semibold">Code Analysis</span>
+      </div>
+
+      <div className=" flex justify-between items-center">
+        <div className="relative w-full px-2">
+          {/* Textarea */}
+          <textarea
+            ref={textareaRef}
+            value={text}
+            onChange={handleInput}
+            placeholder="Paste your code or upload a file..."
+            className="textarea textarea-bordered w-72 lg:w-full overflow-y-auto resize-none pr-1 lg:pr-10"
+            style={{
+              minHeight: "4rem", // Minimum height
+              maxHeight: "12rem", // Maximum height
+            }}
+          ></textarea>
+
+          {/* File Input Section */}
+
+          {/* Plus Icon */}
+          <label
+            htmlFor="file-upload"
+            className="absolute -right-20 lg:right-3 bottom-8 cursor-pointer bg-primary text-white p-1 rounded-full shadow-md"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+              stroke="currentColor"
+              className="w-4 h-4"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 4.5v15m7.5-7.5h-15"
+              />
+            </svg>
+          </label>
+        </div>
+        <div>
+          <button className="btn btn-outline">AnalyzeCode</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default InputBox; -->

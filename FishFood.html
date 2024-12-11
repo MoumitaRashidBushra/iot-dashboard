@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fish Food Measurement</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font link -->
+
+    <script
+      src="https://kit.fontawesome.com/4ee5f1f089.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- sidebar start -->
+    <div class="drawer lg:drawer-open">
+      <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content flex flex-col">
+        <!-- Page content here start -->
+
+        <!-- navbar start -->
+        <div class="bg-base-100">
+          <div class="navbar container px-8 mb-8 mt-8">
+            <div class="flex-1">
+              <a class="btn btn-ghost text-3xl font-bold"
+                >Fish Food Measurement</a
+              >
+            </div>
+            <div class="flex-none gap-2">
+              <i class="fa-solid fa-bell text-2xl"></i>
+              <div class="dropdown dropdown-end">
+                <div
+                  tabindex="0"
+                  role="button"
+                  class="btn btn-ghost btn-circle avatar"
+                >
+                  <div class="w-10 rounded-full">
+                    <img
+                      alt="Tailwind CSS Navbar component"
+                      src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                    />
+                  </div>
+                </div>
+                <ul
+                  tabindex="0"
+                  class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+                >
+                  <li>
+                    <a class="justify-between">
+                      Profile
+                      <span class="badge">New</span>
+                    </a>
+                  </li>
+                  <li><a>Settings</a></li>
+                  <li><a>Logout</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- navbar end -->
+        <!-- food tank start -->
+        <div class="container px-10 lg:px-32 text-center">
+          <p class="text-xl lg:text-3xl font-semibold">
+            Fish Food Reserver and Food Tank Analysis
+          </p>
+        </div>
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 container px-2 lg:px-16 items-center mt-10 gap-8 mx-auto mb-5"
+        >
+          <div>
+            <div class="card bg-base-100 w-full border border-black">
+              <div class="card-body">
+                <div class="flex justify-between gap-4">
+                  <div class="text-2xl font-bold">
+                    Food Level (Food Reserve)
+                  </div>
+                  <div>
+                    <p class="font-semibold text-black">...</p>
+                  </div>
+                </div>
+
+                <div class="mt-4 flex justify-center">
+                  <canvas id="foodLevelChart1" class="w-52 h-52"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card bg-base-100 w-full border border-black">
+              <div class="card-body">
+                <div class="flex justify-between gap-4">
+                  <div class="text-2xl font-bold">Food Level (Food Tanks)</div>
+                  <div>
+                    <p class="font-semibold text-black">...</p>
+                  </div>
+                </div>
+
+                <!-- Chart Container -->
+                <div class="mt-4 flex justify-center">
+                  <canvas id="foodLevelChart2" class="w-52 h-52"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div></div>
+        </div>
+
+        <!-- button start-->
+        <div
+          class="container px-10 lg:px-64 flex items-center gap-4 lg:gap-20 mb-6 lg:mb-16"
+        >
+          <div class="text-center">
+            <button
+              class="btn btn-outline btn-wide btn-active btn-neutral text-white"
+            >
+              Reserve to Daily Tank
+            </button>
+          </div>
+
+          <div class="text-center">
+            <button
+              class="btn btn-outline btn-wide btn-active btn-neutral text-white"
+            >
+              Feed Now
+            </button>
+          </div>
+        </div>
+        <!-- button end -->
+        <!-- food tank end -->
+
+        <!-- Page content here end-->
+        <label
+          for="my-drawer-2"
+          class="btn btn-primary drawer-button lg:hidden"
+        >
+          Open drawer
+        </label>
+      </div>
+      <div class="drawer-side">
+        <label
+          for="my-drawer-2"
+          aria-label="close sidebar"
+          class="drawer-overlay"
+        ></label>
+        <ul class="menu bg-base-200 text-base-content min-h-full w-56 p-4">
+          <!-- Sidebar content here -->
+          <li>
+            <a
+              href="index.html"
+              class="mt-8 text-center mb-4 font-semibold"
+              data-page="index.html"
+              >Water Quality Analysis</a
+            >
+          </li>
+          <li>
+            <a
+              href="FishDisease.html"
+              class="text-center mb-4 font-semibold"
+              data-page="FishDisease.html"
+              >Fish Disease Detection</a
+            >
+          </li>
+          <li>
+            <a
+              href="TDSMeasurement.html"
+              class="text-center mb-4 font-semibold"
+              data-page="TDSMeasurement.html"
+              >TDS Measurement</a
+            >
+          </li>
+          <li>
+            <a
+              href="FishFood.html"
+              class="text-center mb-4 font-semibold"
+              data-page="FishFood.html"
+              >Fish Food Measurement</a
+            >
+          </li>
+          <li>
+            <a
+              href="Contact.html"
+              class="text-center mb-4 font-semibold"
+              data-page="Contact.html"
+              >Contact to Admin</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- sidebar end -->
+
+    <!-- Include Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="food.js"></script>
+    <script src="common.js"></script>
+  </body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact to Admin</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font link -->
+
+    <script
+      src="https://kit.fontawesome.com/4ee5f1f089.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- sidebar start -->
+    <div class="drawer lg:drawer-open">
+      <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content flex flex-col">
+        <!-- Page content here start -->
+
+        <!-- navbar start -->
+        <div class="bg-base-100">
+          <div class="navbar container px-8 mb-8 mt-8">
+            <div class="flex-1">
+              <a class="btn btn-ghost text-3xl font-bold">Contact to Admin</a>
+            </div>
+            <div class="flex-none gap-2">
+              <i class="fa-solid fa-bell text-2xl"></i>
+              <div class="dropdown dropdown-end">
+                <div
+                  tabindex="0"
+                  role="button"
+                  class="btn btn-ghost btn-circle avatar"
+                >
+                  <div class="w-10 rounded-full">
+                    <img
+                      alt="Tailwind CSS Navbar component"
+                      src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                    />
+                  </div>
+                </div>
+                <ul
+                  tabindex="0"
+                  class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+                >
+                  <li>
+                    <a class="justify-between">
+                      Profile
+                      <span class="badge">New</span>
+                    </a>
+                  </li>
+                  <li><a>Settings</a></li>
+                  <li><a>Logout</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- navbar end -->
+        <!-- Input start -->
+        <div class="container px-32 text-center">
+          <p class="text-3xl font-semibold mb-10">
+            Feel free to share your problems with our admin
+          </p>
+        </div>
+        <div
+          class="container px-10 lg:px-44 mb-3 grid grid-cols-1 lg:grid-cols-2 gap-6 items-center"
+        >
+          <div>
+            <label class="form-control w-full">
+              <div class="label">
+                <span class="label-text font-bold"> Name</span>
+              </div>
+              <input
+                type="text"
+                placeholder="Enter your name"
+                class="input input-bordered border-black w-full"
+              />
+            </label>
+          </div>
+          <div>
+            <label class="form-control w-full">
+              <div class="label">
+                <span class="label-text font-bold">ID</span>
+              </div>
+              <input
+                type="number"
+                placeholder="Enter your ID"
+                class="input input-bordered border-black w-full"
+              />
+            </label>
+          </div>
+        </div>
+        <div class="container px-10 lg:px-44 mb-10">
+          <label class="form-control">
+            <div class="label">
+              <span class="label-text font-bold">Problem</span>
+            </div>
+            <textarea
+              class="textarea textarea-bordered h-24 border-black"
+              placeholder="Write your problem here"
+            ></textarea>
+          </label>
+        </div>
+        <div class="container px-10 lg:px-32 text-center">
+          <button class="btn btn-active btn-neutral text-white btn-wide mb-10">
+            Submit
+          </button>
+        </div>
+        <!-- Input end -->
+
+        <!-- Page content here end-->
+        <label
+          for="my-drawer-2"
+          class="btn btn-primary drawer-button lg:hidden"
+        >
+          Open drawer
+        </label>
+      </div>
+      <div class="drawer-side">
+        <label
+          for="my-drawer-2"
+          aria-label="close sidebar"
+          class="drawer-overlay"
+        ></label>
+        <ul class="menu bg-base-200 text-base-content min-h-full w-56 p-4">
+          <!-- Sidebar content here -->
+          <li>
+            <a
+              href="index.html"
+              class="mt-8 text-center mb-4 font-semibold"
+              data-page="index.html"
+              >Water Quality Analysis</a
+            >
+          </li>
+          <li>
+            <a
+              href="FishDisease.html"
+              class="text-center mb-4 font-semibold"
+              data-page="FishDisease.html"
+              >Fish Disease Detection</a
+            >
+          </li>
+          <li>
+            <a
+              href="TDSMeasurement.html"
+              class="text-center mb-4 font-semibold"
+              data-page="TDSMeasurement.html"
+              >TDS Measurement</a
+            >
+          </li>
+          <li>
+            <a
+              href="FishFood.html"
+              class="text-center mb-4 font-semibold"
+              data-page="FishFood.html"
+              >Fish Food Measurement</a
+            >
+          </li>
+          <li>
+            <a
+              href="Contact.html"
+              class="text-center mb-4 font-semibold"
+              data-page="Contact.html"
+              >Contact to Admin</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- sidebar end -->
+    <script src="common.js"></script>
+  </body>
+</html>

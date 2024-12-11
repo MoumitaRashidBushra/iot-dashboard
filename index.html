@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Water Quality Analysis</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font link -->
+
+    <script
+      src="https://kit.fontawesome.com/4ee5f1f089.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- sidebar start -->
+    <div class="drawer lg:drawer-open">
+      <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content flex flex-col">
+        <!-- Page content here start -->
+
+        <!-- navbar start -->
+        <div class="navbar bg-base-100 container px-8 mb-10 mt-8">
+          <div class="flex-1">
+            <a class="btn btn-ghost text-3xl font-bold"
+              >Water Quality Analysis</a
+            >
+          </div>
+          <div class="flex-none gap-2">
+            <!-- <div class="form-control">
+
+              <input
+                type="text"
+                placeholder="Search"
+                class="input input-bordered w-24 md:w-auto"
+              />
+            </div> -->
+            <i class="fa-solid fa-bell text-2xl"></i>
+            <div class="dropdown dropdown-end">
+              <div
+                tabindex="0"
+                role="button"
+                class="btn btn-ghost btn-circle avatar"
+              >
+                <div class="w-10 rounded-full">
+                  <img
+                    alt="Tailwind CSS Navbar component"
+                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                  />
+                </div>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              >
+                <li>
+                  <a class="justify-between">
+                    Profile
+                    <span class="badge">New</span>
+                  </a>
+                </li>
+                <li><a>Settings</a></li>
+                <li><a>Logout</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- navbar end -->
+
+        <!-- Stat start -->
+
+        <div class="container px-10 w-auto mx-auto">
+          <div class="stats shadow border border-black">
+            <div class="stat flex justify-center items-center">
+              <div>
+                <img class="w-8" src="image/ph-meter_11347226.png" alt="" />
+              </div>
+              <div>
+                <div class="stat-value text-2xl mb-2 text-center">pH</div>
+                <div class="stat-desc text-center">pH scale(0-14)</div>
+              </div>
+            </div>
+            <div class="stat flex justify-center items-center">
+              <div>
+                <img class="w-8" src="image/electronics_1752833.png" alt="" />
+              </div>
+              <div>
+                <div class="stat-value text-2xl mb-2 text-center">TDS</div>
+                <div class="stat-desc text-center">
+                  Milligrams per liter(mg/L) or ppm
+                </div>
+              </div>
+            </div>
+            <div class="stat flex justify-center items-center">
+              <div>
+                <img class="w-8" src="image/null_5115845.png" alt="" />
+              </div>
+              <div>
+                <div class="stat-value text-2xl mb-2 text-center">
+                  Turbidity
+                </div>
+                <div class="stat-desc text-center">
+                  Nephelometric Turbidity Units NTU
+                </div>
+              </div>
+            </div>
+            <div class="stat flex justify-center items-center">
+              <div>
+                <img class="w-8" src="image/weather_15450153.png" alt="" />
+              </div>
+              <div>
+                <div class="stat-value text-2xl mb-2 text-center">
+                  Temperature
+                </div>
+                <div class="stat-desc text-center">Degrees Celsius (°C)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stat end -->
+
+        <!-- Card start -->
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 container px-2 lg:px-16 items-center mt-10 gap-8 mx-auto mb-16"
+        >
+          <div>
+            <div class="card bg-base-100 w-full border border-black">
+              <div class="card-body">
+                <div class="flex justify-between gap-4">
+                  <div class="text-2xl font-bold">
+                    Ammonia & Carbon monoxide level
+                  </div>
+                  <div>
+                    <button class="btn btn-outline">Daily</button>
+                  </div>
+                </div>
+
+                <!-- Chart Container -->
+                <div class="mt-4">
+                  <canvas
+                    id="ammoniaCarbonChart"
+                    class="w-full h-full"
+                  ></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card bg-base-100 w-full border border-black">
+              <div class="card-body">
+                <div class="flex justify-between gap-20">
+                  <div class="text-2xl font-bold">
+                    Food Level (Food Reserve & Food Tanks)
+                  </div>
+                  <div>
+                    <button class="btn btn-outline">Daily</button>
+                  </div>
+                </div>
+
+                <!-- Chart Container -->
+                <div class="mt-4 flex justify-center">
+                  <canvas id="foodLevelChart" class="w-52 h-52"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card bg-base-100 w-full border border-black">
+            <div class="overflow-x-auto">
+              <table class="table table-zebra text-black">
+                <!-- head -->
+                <thead>
+                  <tr class="text-black">
+                    <th></th>
+                    <th>Name</th>
+                    <th>Value</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- row 1 -->
+                  <tr class="">
+                    <th>1</th>
+                    <td>pH</td>
+                    <td>6.5</td>
+                    <td>
+                      <button class="btn btn-outline btn-success btn-sm">
+                        Stander
+                      </button>
+                    </td>
+                  </tr>
+                  <!-- row 2 -->
+                  <tr>
+                    <th>2</th>
+                    <td>Total Dissolved Solids (TDS)</td>
+                    <td>300 mg/L</td>
+                    <td>
+                      <button class="btn btn-outline btn-success btn-sm">
+                        Stander
+                      </button>
+                    </td>
+                  </tr>
+                  <!-- row 3 -->
+                  <tr>
+                    <th>3</th>
+                    <td>Temperature</td>
+                    <td>25°C (73°F)</td>
+                    <td>
+                      <button class="btn btn-outline btn-success btn-sm">
+                        Stander
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>4</th>
+                    <td>Turbidity</td>
+                    <td>22 NTU</td>
+                    <td>
+                      <button class="btn btn-outline btn-success btn-sm">
+                        Stander
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>5</th>
+                    <td>Ammonia</td>
+                    <td>0.02 mg/L</td>
+                    <td>
+                      <button class="btn btn-outline btn-success btn-sm">
+                        Stander
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>6</th>
+                    <td>Carbon Monoxide (CO)</td>
+                    <td>0 mg/L</td>
+                    <td>
+                      <button class="btn btn-outline btn-success btn-sm">
+                        Stander
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div>
+            <div class="card bg-base-100 w-full border border-black">
+              <div class="card-body">
+                <div class="flex justify-between">
+                  <div class="text-2xl font-bold">
+                    Standard & Dangerous Value
+                  </div>
+                  <div>
+                    <p class="font-bold text-gray-400">...</p>
+                  </div>
+                </div>
+
+                <!-- Chart Container -->
+                <div class="mt-4">
+                  <canvas id="waterQualityChart" class="w-full h-64"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card ends -->
+
+        <!-- Page content here end-->
+        <label
+          for="my-drawer-2"
+          class="btn btn-primary drawer-button lg:hidden"
+        >
+          Open drawer
+        </label>
+      </div>
+      <div class="drawer-side">
+        <label
+          for="my-drawer-2"
+          aria-label="close sidebar"
+          class="drawer-overlay"
+        ></label>
+        <ul class="menu bg-base-200 text-base-content min-h-full w-56 p-4">
+          <!-- Sidebar content here -->
+          <li>
+            <a
+              href="index.html"
+              class="mt-8 text-center mb-4 font-semibold"
+              data-page="index.html"
+              >Water Quality Analysis</a
+            >
+          </li>
+          <li>
+            <a
+              href="FishDisease.html"
+              class="text-center mb-4 font-semibold"
+              data-page="FishDisease.html"
+              >Fish Disease Detection</a
+            >
+          </li>
+          <li>
+            <a
+              href="TDSMeasurement.html"
+              class="text-center mb-4 font-semibold"
+              data-page="TDSMeasurement.html"
+              >TDS Measurement</a
+            >
+          </li>
+          <li>
+            <a
+              href="FishFood.html"
+              class="text-center mb-4 font-semibold"
+              data-page="FishFood.html"
+              >Fish Food Measurement</a
+            >
+          </li>
+          <li>
+            <a
+              href="Contact.html"
+              class="text-center mb-4 font-semibold"
+              data-page="Contact.html"
+              >Contact to Admin</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- sidebar end -->
+
+    <!-- Include Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="chart.js"></script>
+    <script src="waterfall.js"></script>
+    <script src="map.js"></script>
+    <script src="common.js"></script>
+  </body>
+</html>
