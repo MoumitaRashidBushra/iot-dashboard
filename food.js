@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   new Chart(ctx, {
     type: "doughnut", // Chart type
     data: {
-      labels: ["Food Reserve 1", "Food Reserve 2"], // Labels
+      labels: ["Food Reserve 1(37%)", "Food Reserve 2(63%)"], // Labels
       datasets: [
         {
           label: "Food Level",
@@ -66,7 +66,12 @@ document.addEventListener("DOMContentLoaded", () => {
   new Chart(ctx, {
     type: "doughnut", // Chart type
     data: {
-      labels: ["Food Tank 1", "Food Tank 2", "Food Tank 3", "Food Tank 4"], // Labels
+      labels: [
+        "Food Tank 1(30%)",
+        "Food Tank 2(25%)",
+        "Food Tank 3 (25%)",
+        "Food Tank 4(20%)",
+      ], // Labels
       datasets: [
         {
           label: "Food Levels",

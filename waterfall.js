@@ -7,11 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
     type: "doughnut", // Chart type
     data: {
       labels: [
-        "Food Reserve",
-        "Food Tank 1",
-        "Food Tank 2",
-        "Food Tank 3",
-        "Food Tank 4",
+        "Food Reserve(40%)",
+        "Food Tank 1(20%)",
+        "Food Tank 2(15%)",
+        "Food Tank 3(15%)",
+        "Food Tank 4(10%)",
       ], // Labels
       datasets: [
         {

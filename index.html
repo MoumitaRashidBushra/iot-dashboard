@@ -127,7 +127,7 @@
               <div class="card-body">
                 <div class="flex justify-between gap-4">
                   <div class="text-2xl font-bold">
-                    Ammonia & Carbon monoxide level
+                    Ammonia & Carbon dioxide level
                   </div>
                   <div>
                     <button class="btn btn-outline">Daily</button>
@@ -164,7 +164,8 @@
               </div>
             </div>
           </div>
-          <div class="card bg-base-100 w-full border border-black">
+
+          <div class="card bg-base-100 w-full border border-black col-span-2">
             <div class="overflow-x-auto">
               <table class="table table-zebra text-black">
                 <!-- head -->
@@ -172,6 +173,8 @@
                   <tr class="text-black">
                     <th></th>
                     <th>Name</th>
+                    <th>Standard Value</th>
+                    <th>Dangerous Value</th>
                     <th>Value</th>
                     <th>Status</th>
                   </tr>
@@ -181,6 +184,8 @@
                   <tr class="">
                     <th>1</th>
                     <td>pH</td>
+                    <td>8.5</td>
+                    <td>9.0</td>
                     <td>6.5</td>
                     <td>
                       <button class="btn btn-outline btn-success btn-sm">
@@ -192,6 +197,8 @@
                   <tr>
                     <th>2</th>
                     <td>Total Dissolved Solids (TDS)</td>
+                    <td>500</td>
+                    <td>1500</td>
                     <td>300 mg/L</td>
                     <td>
                       <button class="btn btn-outline btn-success btn-sm">
@@ -203,6 +210,8 @@
                   <tr>
                     <th>3</th>
                     <td>Temperature</td>
+                    <td>30</td>
+                    <td>35</td>
                     <td>25°C (73°F)</td>
                     <td>
                       <button class="btn btn-outline btn-success btn-sm">
@@ -213,6 +222,8 @@
                   <tr>
                     <th>4</th>
                     <td>Turbidity</td>
+                    <td>30</td>
+                    <td>50</td>
                     <td>22 NTU</td>
                     <td>
                       <button class="btn btn-outline btn-success btn-sm">
@@ -223,6 +234,8 @@
                   <tr>
                     <th>5</th>
                     <td>Ammonia</td>
+                    <td>0.02</td>
+                    <td>0.05</td>
                     <td>0.02 mg/L</td>
                     <td>
                       <button class="btn btn-outline btn-success btn-sm">
@@ -233,6 +246,8 @@
                   <tr>
                     <th>6</th>
                     <td>Carbon Monoxide (CO)</td>
+                    <td>0</td>
+                    <td>1</td>
                     <td>0 mg/L</td>
                     <td>
                       <button class="btn btn-outline btn-success btn-sm">
@@ -244,26 +259,8 @@
               </table>
             </div>
           </div>
-          <div>
-            <div class="card bg-base-100 w-full border border-black">
-              <div class="card-body">
-                <div class="flex justify-between">
-                  <div class="text-2xl font-bold">
-                    Standard & Dangerous Value
-                  </div>
-                  <div>
-                    <p class="font-bold text-gray-400">...</p>
-                  </div>
-                </div>
-
-                <!-- Chart Container -->
-                <div class="mt-4">
-                  <canvas id="waterQualityChart" class="w-full h-64"></canvas>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
+
         <!-- Card ends -->
 
         <!-- Page content here end-->

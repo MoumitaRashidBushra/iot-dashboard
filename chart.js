@@ -5,7 +5,7 @@ const ctx = document.getElementById("ammoniaCarbonChart").getContext("2d");
 const ammoniaCarbonChart = new Chart(ctx, {
   type: "line", // Define the chart type
   data: {
-    labels: ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7"], // X-axis labels
+    labels: ["1", "2", "3", "4", "5", "6", "7"], // X-axis labels
     datasets: [
       {
         label: "Ammonia Level (ppm)",
@@ -46,7 +46,7 @@ const ammoniaCarbonChart = new Chart(ctx, {
       x: {
         title: {
           display: true,
-          text: "Days",
+          text: "Minutes/second",
           color: "#333",
         },
       },
